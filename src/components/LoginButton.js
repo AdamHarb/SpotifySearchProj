@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react";
-import {encode as base64_encode} from 'base-64';
 import {Button} from "react-bootstrap";
+import qs from "qs";
 
 const axios = require('axios').default;
 
@@ -9,8 +9,8 @@ const axios = require('axios').default;
 // }
 
 const LoginButton = () => {
-    const CLIENT_ID="";
-    const CLIENT_SECRET="";
+    const CLIENT_ID="996f176e7bbf4a4dbada28dc764183c0";
+    const CLIENT_SECRET="35cacae309a841549f78ec106d0f192e";
     const REDIRECT_URI="http://localhost:3000/";
     let state= "esrgniouhrsy";
     let code=null;
@@ -21,31 +21,19 @@ const LoginButton = () => {
                 postReq().then(r => (console.log('Requested.')));
                 async function postReq() {
                     code = getCode();
-                    try {
-
-                        const res = await axios.post('https://accounts.spotify.com/api/token', {
-                                code: code,
-                                redirect_uri: REDIRECT_URI,
-                                grant_type: "authorization_code",
-                            },
+                    const data = {
+                            code: code,
+                            redirect_uri: REDIRECT_URI,
+                            grant_type: "client_credentials",
+                            client_id: CLIENT_ID,
+                            client_secret: CLIENT_SECRET
+                    }
+                        const res = await axios.post('https://accounts.spotify.com/api/token', qs.stringify(data),
                             {
                                 headers: {
-
-                                    'Authorization': 'Basic' + (base64_encode(CLIENT_ID + ':' + CLIENT_SECRET)),
-                                    'Content-Type': 'application/x-www-form-urlencoded'
+                                    'Content-Type': 'application/x-www-form-urlencoded',
                                 }
                             }).then((r) => console.log(r.data))
-                    } catch (error) {
-                        console.log(error);
-
-                        if (error.response.status === 400) {
-                            console.log(`HTTP 400 error occurred`);
-                        }
-                        // You can get response data (mostly the reason would be in it)
-                        if (error.response.data) {
-                            console.log(error.response.data);
-                        }
-                    }
                 }}
         },
         []);
