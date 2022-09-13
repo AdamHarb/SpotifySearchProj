@@ -5,3 +5,7 @@
 .App {
   text-align: center;
 }
+
+.SearchBar {
+  resize: block;
+}
