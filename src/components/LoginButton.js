@@ -9,8 +9,8 @@ const axios = require('axios').default;
 // }
 
 const LoginButton = () => {
-    const CLIENT_ID="996f176e7bbf4a4dbada28dc764183c0";
-    const CLIENT_SECRET="35cacae309a841549f78ec106d0f192e";
+    const CLIENT_ID="";
+    const CLIENT_SECRET="";
     const REDIRECT_URI="http://localhost:3000/";
     let state= "esrgniouhrsy";
     let code=null;
