@@ -2,9 +2,14 @@ import React from 'react';
 import Cookies from "js-cookie";
 import axioscfg from "./axioscfg";
 
-const axios = axioscfg();
+
 
 export default async function getAlbums(query){
+
+    const axios = axioscfg();
+
+    // axios.defaults.headers['Authorization'] = `Bearer ${Cookies.get("spotifyAuthToken")}`
+
     const res = await axios.get('artists/' + query + '/albums', {
         params: {
             id: query,

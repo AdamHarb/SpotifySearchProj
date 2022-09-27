@@ -18,7 +18,11 @@ const Albums = () => {
     const mapAlbums = (id) => {
         let data = getAlbums(id).then((data) => {
             setAlbums(data.data.items)
-            setArtist(data.data.items[0].artists[0].name);
+            try {
+                setArtist(data.data.items[0].artists[0].name);
+            }catch (e) {
+                setLoading("false")
+            }
             setLoading("false")
         }).catch(e => {
             if (e === 401) {
@@ -37,7 +41,7 @@ const Albums = () => {
                     <h1>{artist}</h1>
                     <h2 className="mb-2 text-muted">Albums</h2>
                 </div>
-                    <Link to='/'><Button className="btn-lg backButton">Back</Button></Link>
+                    <Link to='/SpotifySearchProj'><Button className="btn-lg backButton">Back</Button></Link>
             </header>
             {
                 artist ? (

@@ -4,7 +4,8 @@ import {Link} from "react-router-dom";
 const CommonLayout = () => {
     return (
         <div className="header-background">
-            <Link to="/" className="title"><h1>Spotify Search</h1></Link>
+            <Link to="/SpotifySearchProj" className="title"><h1>Spotify Search</h1></Link>
+
         </div>
     )
 }

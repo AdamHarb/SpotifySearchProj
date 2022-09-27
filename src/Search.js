@@ -33,6 +33,7 @@ const Search = () => {
                     Search
                 </Button>
             </InputGroup>
+
             <Row className="mx-0 row row-cols-5" id="cardContainer">
 
                 {artists.map((artist, key) => {

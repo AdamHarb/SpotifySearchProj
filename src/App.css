@@ -1,4 +1,5 @@
 . {
+    display: flex;
     box-sizing: border-box;
     padding-bottom: 2em;
 }
@@ -18,9 +19,19 @@
 
 }
 
+.buttonContainer{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
 .loginButton{
-    justify-self: center;
-    margin-top: auto;
+    margin-top: 2em;
+    font-size: 1em;
+    width: 20em;
+    height: 5em;
+
 }
 
 .artistBody{
@@ -118,11 +129,11 @@
         display: flex;
         flex-direction: column;
         flex-grow: 1;
-        max-width: 17em;
+        max-width: 20em;
     }
     .cardImg{
         max-width: 100%;
-        height: 15em;
+        height: 17em;
     }
 
 }
