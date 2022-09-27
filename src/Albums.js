@@ -46,9 +46,9 @@ const Albums = () => {
             {
                 artist ? (
                     <Row className="mx-0 row row-cols-5" id="cardContainer">
-                        {albums.map((album, key) => {
+                        {albums.map((album) => {
                             return(
-                                <AlbumCard album={album} key={key}/>
+                                <AlbumCard album={album} key={album.id}/>
                             );
                         })}
                     </Row>

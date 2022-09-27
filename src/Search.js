@@ -2,14 +2,13 @@ import {Button, Container, FormControl, InputGroup, Row} from "react-bootstrap";
 import ArtistCard from "./components/ArtistCard";
 import React, {useState} from "react";
 import getArtists from "./services/getArtists";
-import Cookies from "js-cookie";
 
 const Search = () => {
     const [searchInput, setSearchInput] = useState("");
     const [artists, setArtist] = useState([]);
 
     const mapArtists = () => {
-        let data = getArtists(searchInput).then(data =>
+        getArtists(searchInput).then(data =>
             {
                     setArtist(data.data.artists.items)
             }

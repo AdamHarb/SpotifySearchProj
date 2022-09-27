@@ -4,10 +4,11 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 const ArtistCard = (props) => {
-    const {artist, mapAlbums} = props;
+    const artist = props.artist;
+
         return (
             <Card className="card mb-3 mx-1" key={artist.id}>
-                <Card.Img className="cardImg" src={typeof artist.images[0] === "undefined" ? '#' : artist.images[0].url}/>
+                <Card.Img className="cardImg" src={artist.images[0] ? artist.images[0].url : '#'}/>
                 <Card.Body className="artistBody">
                     <Card.Title>
                         {artist.name}
