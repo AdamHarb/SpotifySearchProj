@@ -1,11 +1,129 @@
 . {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    padding-bottom: 2em;
 }
 
-.App {
-  text-align: center;
+.header-background{
+    background-color: #1db954;
+    display: flex;
+}
+
+.title, .title:hover {
+    color: white;
+    font-weight: bold;
+    align-self: center;
+    justify-content: center;
+    margin-left: .5em;
+    text-decoration: none;
+
+}
+
+.loginButton{
+    justify-self: center;
+    margin-top: auto;
+}
+
+.artistBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.follower-text{
+    vertical-align: bottom;
+}
+
+.cardBody{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .SearchBar {
   resize: block;
 }
+
+.albumHeader{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.textColumn{
+    display:flex;
+    flex-flow: column nowrap;
+}
+
+.backButton{
+    display: flex;
+    justify-content:right;
+    margin-top: .25em;
+}
+
+.cardImg{
+    max-width:30%;
+    margin-top: .8em;
+    height: auto;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+}
+
+#cardContainer{
+    flex-direction: column;
+    flex-grow: inherit;
+    flex-wrap: wrap;
+}
+
+.card:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0 .2em .95em;
+}
+
+.albumClass{
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+
+}
+
+@media only screen and (max-width: 780px) {
+    .card{
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        width: auto;
+        height: auto;
+    }
+    #card-bottom{
+        justify-self: center;
+        align-self: center;
+        border: 0;
+    }
+}
+
+@media only screen and (min-width: 780px) {
+    #cardContainer{
+        flex-direction: row;
+        flex-grow: 0;
+        flex-wrap: wrap;
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        max-width: 17em;
+    }
+    .cardImg{
+        max-width: 100%;
+        height: 15em;
+    }
+
+}
+
