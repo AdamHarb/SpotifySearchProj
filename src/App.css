@@ -139,3 +139,17 @@
 
 }
 
+/* -- Better mobile responsive -- */
+@media only screen and (max-width: 550px) {
+    #cardContainer .card {
+        flex-direction: column;
+    }
+    #cardContainer .card .cardImg {
+        max-width: 65%;
+        max-height: 65%;
+    }
+    #cardContainer .card .artistBody {
+        text-align: center;
+    }
+}
+
