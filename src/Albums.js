@@ -45,7 +45,7 @@ const Albums = () => {
             </header>
             {
                 artist ? (
-                    <Row className="mx-0 row row-cols-5" id="cardContainer">
+                    <Row className="row mx-0" id="cardContainer">
                         {albums.map((album) => {
                             return(
                                 <AlbumCard album={album} key={album.id}/>

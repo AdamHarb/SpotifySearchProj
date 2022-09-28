@@ -102,6 +102,7 @@
     cursor: default;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
 
 }
 
@@ -122,15 +123,14 @@
 
 @media only screen and (min-width: 780px) {
     #cardContainer{
+        display: flex;
+        justify-content: center;
         flex-direction: row;
-        flex-grow: 0;
         flex-wrap: wrap;
     }
     .card{
-        display: flex;
         flex-direction: column;
-        flex-grow: 1;
-        max-width: 20em;
+        max-width: 16.85em;
     }
     .cardImg{
         max-width: 100%;
